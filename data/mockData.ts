@@ -1,0 +1,132 @@
+import {
+  Globe,
+  ShoppingBag,
+  Smartphone,
+  AlertTriangle,
+  PhoneIncoming,
+  XCircle,
+  Clock,
+} from "lucide-react";
+import { TimelineEvent, CustomerData, SystemFlag } from "@/types/dashboard";
+
+export const customerMockData: CustomerData = {
+  name: "Aman Singh",
+  memberSince: 2021,
+  tier: "PLATINUM",
+  accountRef: "AX-884920-IN",
+  creditLimit: "₹15,00,000",
+  frictionScore: 9,
+  churnRiskProb: "94.2%",
+  npsScore: "2 / 10 (Detractor)",
+  biometricStatus: "Verified iOS FaceID",
+  primaryChannel: "iOS Banking App",
+};
+
+export const timelineEventsMockData: TimelineEvent[] = [
+  {
+    id: "node-1",
+    time: "09:00 AM",
+    channel: "web",
+    title: "Web Knowledge Search",
+    description: 'Customer searched "dispute charge" on website and viewed FAQ.',
+    icon: Globe,
+    metadata: {
+      ip: "103.24.12.89",
+      device: "Chrome v122 / macOS San Francisco",
+      sessionId: "SESS-WEB-884920",
+      endpoint: "/help/articles/dispute-charge-faq",
+    },
+  },
+  {
+    id: "node-2",
+    time: "09:15 AM",
+    channel: "web",
+    title: "Checkout Intent Navigation",
+    description: "Navigated to Cart/Checkout page.",
+    icon: ShoppingBag,
+    metadata: {
+      ip: "103.24.12.89",
+      device: "Chrome v122 / macOS San Francisco",
+      sessionId: "SESS-WEB-884920",
+      endpoint: "/checkout/payment-review",
+      amount: "₹50,000",
+    },
+  },
+  {
+    id: "node-3",
+    time: "09:17 AM",
+    channel: "app",
+    title: "iOS Mobile Session Auth",
+    description: "Logged into iOS App. Attempted ₹50,000 transaction.",
+    icon: Smartphone,
+    metadata: {
+      ip: "49.36.192.14 (Cellular 5G)",
+      device: "iPhone 15 Pro / iOS 17.4",
+      sessionId: "APP-IOS-990214",
+      endpoint: "/api/v2/payments/initiate",
+      amount: "₹50,000",
+    },
+  },
+  {
+    id: "node-4",
+    time: "09:17 AM",
+    channel: "error",
+    title: "Gateway API Failure",
+    description: "API returned HTTP 503 Gateway Timeout.",
+    icon: AlertTriangle,
+    isError: true,
+    metadata: {
+      ip: "10.240.8.11 (Internal Gateway)",
+      device: "Payment Core Microservice",
+      sessionId: "APP-IOS-990214",
+      endpoint: "POST /v2/transactions/charge",
+      httpStatus: "503 SERVICE_UNAVAILABLE",
+      amount: "₹50,000",
+    },
+  },
+  {
+    id: "node-5",
+    time: "09:18 AM",
+    channel: "phone",
+    title: "Inbound PSTN Voice Call",
+    description: "Incoming Call to Customer Care.",
+    icon: PhoneIncoming,
+    isActive: true,
+    metadata: {
+      ip: "SIP Gateway Node #04",
+      device: "Mobile Voice Line (+91 98*** ****",
+      sessionId: "CALL-PSTN-774920",
+      endpoint: "IVR Routing Node -> Agent #4402",
+    },
+  },
+];
+
+export const systemFlagsMockData: SystemFlag[] = [
+  {
+    id: "FLG-01",
+    title: "Cart Drop-off Detected",
+    subtext: "Customer abandoned checkout 30 mins ago.",
+    severity: "high",
+    badgeText: "HIGH",
+    detail: "Cart Value: ₹50,000",
+    icon: XCircle,
+  },
+  {
+    id: "FLG-02",
+    title: "Escalation Warning",
+    subtext: "2+ complaints logged in the last 7 days.",
+    severity: "warning",
+    badgeText: "WARN",
+    detail: "Risk Trend: Elevating",
+    icon: AlertTriangle,
+  },
+  {
+    id: "FLG-03",
+    title: "Unresolved Issue",
+    subtext: "Previous ticket #8832 open for >7 days.",
+    severity: "overdue",
+    badgeText: "OVERDUE",
+    detail: "Ticket SLA Breach",
+    icon: Clock,
+  },
+];
