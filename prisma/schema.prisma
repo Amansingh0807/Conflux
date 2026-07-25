@@ -1,0 +1,70 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Channel {
+  WEB
+  APP
+  CALL
+}
+
+enum FlagType {
+  DROPOFF
+  ESCALATION
+  UNRESOLVED
+}
+
+model Customer {
+  id            String         @id @default(cuid())
+  name          String
+  memberSince   Int
+  frictionScore Int
+  churnRisk     Boolean        @default(true)
+  accountRef    String?        @default("AX-884920-IN")
+  creditLimit   String?        @default("₹15,00,000")
+  tier          String?        @default("PLATINUM")
+  journeyEvents JourneyEvent[]
+  systemFlags   SystemFlag[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model JourneyEvent {
+  id          String   @id @default(cuid())
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  timestamp   String
+  channel     Channel
+  action      String
+  description String
+  isError     Boolean  @default(false)
+  isActive    Boolean  @default(false)
+  ip          String?
+  device      String?
+  sessionId   String?
+  endpoint    String?
+  amount      String?
+  httpStatus  String?
+  createdAt   DateTime @default(now())
+
+  @@index([customerId])
+}
+
+model SystemFlag {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  type       FlagType
+  title      String
+  subtext    String
+  detail     String?
+  badgeText  String?
+  createdAt  DateTime @default(now())
+
+  @@index([customerId])
+}
