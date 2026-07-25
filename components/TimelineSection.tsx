@@ -203,7 +203,7 @@ export function TimelineSection({
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 font-mono text-xs">
               <div className="bg-white p-2.5 rounded border border-slate-200">
                 <span className="text-slate-500 block text-[10px] uppercase font-semibold">
-                  IP Location
+                  Network Node
                 </span>
                 <span className="text-slate-900 font-semibold">
                   {selectedEventData.metadata.ip || "N/A"}

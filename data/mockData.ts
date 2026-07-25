@@ -31,7 +31,7 @@ export const timelineEventsMockData: TimelineEvent[] = [
     description: 'Customer searched "dispute charge" on website and viewed FAQ.',
     icon: Globe,
     metadata: {
-      ip: "103.24.12.89",
+      ip: "Web Gateway Cluster #01",
       device: "Chrome v122 / macOS San Francisco",
       sessionId: "SESS-WEB-884920",
       endpoint: "/help/articles/dispute-charge-faq",
@@ -45,7 +45,7 @@ export const timelineEventsMockData: TimelineEvent[] = [
     description: "Navigated to Cart/Checkout page.",
     icon: ShoppingBag,
     metadata: {
-      ip: "103.24.12.89",
+      ip: "Web Gateway Cluster #01",
       device: "Chrome v122 / macOS San Francisco",
       sessionId: "SESS-WEB-884920",
       endpoint: "/checkout/payment-review",
@@ -60,7 +60,7 @@ export const timelineEventsMockData: TimelineEvent[] = [
     description: "Logged into iOS App. Attempted ₹50,000 transaction.",
     icon: Smartphone,
     metadata: {
-      ip: "49.36.192.14 (Cellular 5G)",
+      ip: "Mobile Cellular Node (Protected)",
       device: "iPhone 15 Pro / iOS 17.4",
       sessionId: "APP-IOS-990214",
       endpoint: "/api/v2/payments/initiate",
@@ -76,7 +76,7 @@ export const timelineEventsMockData: TimelineEvent[] = [
     icon: AlertTriangle,
     isError: true,
     metadata: {
-      ip: "10.240.8.11 (Internal Gateway)",
+      ip: "Internal Payment Gateway #08",
       device: "Payment Core Microservice",
       sessionId: "APP-IOS-990214",
       endpoint: "POST /v2/transactions/charge",
@@ -93,7 +93,7 @@ export const timelineEventsMockData: TimelineEvent[] = [
     icon: PhoneIncoming,
     isActive: true,
     metadata: {
-      ip: "SIP Gateway Node #04",
+      ip: "SIP Voice Routing Node #04",
       device: "Mobile Voice Line (+91 98*** ****",
       sessionId: "CALL-PSTN-774920",
       endpoint: "IVR Routing Node -> Agent #4402",
