@@ -323,9 +323,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - 🌐 **Live Demo**: [https://conflux-k70q.onrender.com](https://conflux-k70q.onrender.com)
 - 📦 **GitHub Repository**: [https://github.com/Amansingh0807/Conflux](https://github.com/Amansingh0807/Conflux)
 - 📊 **Presentation Summary PPT**: [https://tinyurl.com/ywupnet7](https://tinyurl.com/ywupnet7)
-- 📹 **Loom Demo Video**: [https://www.loom.com/share/6c412ffdc2814ebfab4b8939f313dda4](https://www.loom.com/share/6c412ffdc2814ebfab4b8939f313dda4)
-- 🐘 **Prisma ORM Documentation**: [https://www.prisma.io/docs](https://www.prisma.io/docs)
-- ⚡ **Apache Kafka Documentation**: [https://kafka.apache.org/documentation/](https://kafka.apache.org/documentation/)
+
+---
+
+## 📝 Hackathon Outcome
+
+> **Note:** Conflux was developed as a **prototype solution for the American Express CodeStreet Hackathon** under the *Cross-Channel Journey Stitching* theme. While the idea was **not selected in the final evaluation**, this repository represents our complete prototype, technical exploration, and implementation of the proposed solution.
 
 ---
 
