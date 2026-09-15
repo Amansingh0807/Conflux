@@ -8,6 +8,10 @@
   <b>American Express CodeStreet Hackathon Solution</b><br />
   <i>Team: <b>Fliq Odd</b> | Theme: <b>Cross-Channel Journey Stitching</b></i>
 </p>
+<p align="center">
+  <b>Note : This is just a Concept and MVP solution</b><br />
+
+</p>
 
 <p align="center">
   <a href="https://conflux-k70q.onrender.com"><img src="https://img.shields.io/badge/Live_Demo-Render-006FCF?style=for-the-badge&logo=render&logoColor=white" alt="Live Demo" /></a>
